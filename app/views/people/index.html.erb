@@ -1,6 +1,8 @@
+<%= link_to "People App", people_path %>
+
 <p id="notice"><%= notice %></p>
 
-<h1>People</h1>
+<h2>People</h2>
 
 <table>
   <thead>
@@ -15,7 +17,7 @@
   <tbody>
     <% @people.each do |person| %>
       <tr>
-        <td><%= link_to person.name, person %></td>
+        <td><%= link_to person.name, person, method: :get %></td>
         <td><%= person.email %></td>
         <td><%= person.bio %></td>
       </tr>
@@ -25,5 +27,5 @@
 
 <br>
 
-<%= link_to 'Create New Person', new_person_path %>
+<%= link_to 'Create New Person', new_person_path, method: :get %>
 

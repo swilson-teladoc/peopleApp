@@ -1,3 +1,5 @@
+<%= link_to "People App", people_path %>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -15,6 +17,8 @@
   <%= @person.bio %>
 </p>
 
-<%= link_to 'Posts', person_posts_path(@person) %> |
-<%= link_to 'Edit', edit_person_path(@person) %> |
-<%= link_to 'Back', people_path %>
+<ul>
+  <li><%= link_to 'Posts', person_posts_path(@person), method: :get %></li>
+  <li><%= link_to 'Edit', edit_person_path(@person), method: :get %></li>
+  <li id="backLink">Back</li>
+</ul>

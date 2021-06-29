@@ -3,25 +3,11 @@
 <%= render 'form', person: @person %>
 
 <p>Having trouble coming up with a bio? Click the button below to get a random quote of the day!</p>
-<button type="button" onclick="getQuote()">Get quote</button>
+<button id="quoteButton">Get quote</button>
 <p id="quote"></p>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script>
-    function getQuote() {
-        $.ajax({
-            type : 'GET',
-            url : 'https://quotes.rest/qod?language=en',
-            dataType : 'json',
-            success : function(data) {
-                var item = document.getElementById("quote");
-                item.innerHTML = data.contents.quotes[0].quote;
-            },
-            error : function(request){
-                console.log(JSON.stringify("Error: " + request));
-            }
-        });
-    }
-</script>
+<ul>
+  <li id="backLink">Back</li>
+</ul>
 
-<%= link_to 'Back', people_path %>
+<%= javascript_pack_tag 'quote' %>

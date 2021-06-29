@@ -1,3 +1,5 @@
+<%= link_to "People App", people_path %>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -15,7 +17,9 @@
   <%= @post.date %>
 </p>
 
-<%= link_to 'Edit', edit_person_post_path(@person, @post) %> |
-<%= link_to 'Author', person_path(@person) %> |
-<%= link_to 'Delete', person_post_path(@person, @post), method: :delete, data: { confirm: 'Are you sure?' } %> |
-<%= link_to 'Back', person_posts_path(@person) %>
+<ul>
+  <li><%= link_to 'Edit', edit_person_post_path(@person, @post), method: :get %></li>
+  <li><%= link_to 'Author', person_path(@person), method: :get %></li>
+  <li><%= link_to 'Delete', person_post_path(@person, @post), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+  <li id="backLink">Back</li>
+</ul>

@@ -2,5 +2,7 @@
 
 <%= render 'form', person: @person %>
 
-<%= link_to 'Delete Person', @person, method: :delete, data: { confirm: 'Are you sure?' } %> |
-<%= link_to 'Back', person_path %>
+<ul>
+  <li><%= link_to 'Delete Person', @person, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+  <li id="backLink">Back</li>
+</ul>

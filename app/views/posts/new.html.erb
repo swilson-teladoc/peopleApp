@@ -2,4 +2,6 @@
 
 <%= render 'form', post: @post, model: [@person, @person.posts.new] %>
 
-<%= link_to 'Back', person_posts_path(@person) %>
+<ul>
+  <li id="backLink">Back</li>
+</ul>
