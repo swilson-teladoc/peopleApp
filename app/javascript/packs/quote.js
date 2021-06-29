@@ -8,8 +8,8 @@ function getQuote() {
         url : 'https://quotes.rest/qod?language=en',
         dataType : 'json',
         success : function(data) {
-            var item = document.getElementById("quote");
-            item.innerHTML = data.contents.quotes[0].quote;
+            var item = document.getElementById("person_bio");
+            item.value = data.contents.quotes[0].quote;
         },
         error : function(request){
             console.log(JSON.stringify("Error: " + request));
